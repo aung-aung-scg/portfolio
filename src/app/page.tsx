@@ -13,7 +13,7 @@ function SectionHeading({ number, label, title, note, id }: { number: string; la
 }
 
 export default function Home() {
-  const [github, linkedin, cv, email] = p.links;
+  const [github, linkedin, cv, email, facebook] = p.links;
 
   return <>
     <a className="skip-link" href="#main">{p.labels.skip}</a>
@@ -68,7 +68,7 @@ export default function Home() {
 
       <section id="education" className="section" aria-labelledby="education-title"><SectionHeading number="04" label={p.presentation.educationLabel} title={p.presentation.educationHeading} id="education-title" /><div className="education-grid"><article className="education-card"><p className="eyebrow">{p.additional.educationLabel}</p><p className="education-copy">{p.additional.education}</p></article><article className="education-card"><p className="eyebrow">{p.additional.certificationsLabel}</p><ul className="certifications">{p.additional.certifications.map(c => <li key={c}><span aria-hidden="true">↗</span>{c}</li>)}</ul></article><article className="language-row"><h3>{p.additional.languagesLabel}</h3><p>{p.additional.languages}</p></article></div></section>
 
-      <section id="contact" className="contact section" aria-labelledby="contact-title"><div className="contact-top"><p className="eyebrow"><span>05</span>{p.labels.contact}</p><span className="availability"><span className="status-dot" />{p.location}</span></div><h2 id="contact-title">{p.labels.contactIntro}</h2><div className="contact-bottom"><div><p>{p.labels.contactNote}</p><a className="contact-email" href={email.href!}>{email.href!.replace("mailto:", "")}<Arrow /></a><p className="contact-availability">{p.additional.availability}</p></div><a className="contact-round" href={email.href!} aria-label={p.presentation.contactCta}><Arrow /></a></div><nav className="contact-links" aria-label={p.presentation.socialLabel}>{[github, linkedin].map(l => l.href && <a key={l.label} href={l.href}>{l.label}<Arrow /></a>)}</nav></section>
+      <section id="contact" className="contact section" aria-labelledby="contact-title"><div className="contact-top"><p className="eyebrow"><span>05</span>{p.labels.contact}</p><span className="availability"><span className="status-dot" />{p.location}</span></div><h2 id="contact-title">{p.labels.contactIntro}</h2><div className="contact-bottom"><div><p>{p.labels.contactNote}</p><a className="contact-email" href={email.href!}>{email.href!.replace("mailto:", "")}<Arrow /></a><p className="contact-availability">{p.additional.availability}</p></div><a className="contact-round" href={email.href!} aria-label={p.presentation.contactCta}><Arrow /></a></div><nav className="contact-links" aria-label={p.presentation.socialLabel}>{[github, linkedin, facebook].map(l => l.href && <a key={l.label} href={l.href}>{l.label}<Arrow /></a>)}</nav></section>
     </main>
 
     <footer className="shell site-footer"><a href="#" className="wordmark" aria-label={p.name}>{p.nickname.toLowerCase()}<span>.</span></a><span>© {new Date().getFullYear()} {p.name}</span><span>{p.labels.footer}</span></footer>

@@ -38,6 +38,7 @@ export const profile = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/aung-aung-ror-developer" as string | null },
     { label: "Download CV", href: "/cv.pdf" as string | null },
     { label: "Email", href: "mailto:aung.aung.ycc@gmail.com" as string | null },
+    { label: "Facebook", href: "https://www.facebook.com/deinebrian/" as string | null },
   ],
   labels: { projects: "Selected work", projectsIntro: "Products built for the real world.", projectLink: "Visit live site", skills: "The toolkit", skillsIntro: "The right tools. End to end.", experience: "The journey", experienceIntro: "Experience over the years.", contact: "Have something in mind?", contactIntro: "Let’s build something that matters.", contactNote: "Find me online or say hello by email.", footer: "Built with care in Bangkok.", skip: "Skip to content" },
   projects: [
