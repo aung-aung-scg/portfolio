@@ -8,10 +8,11 @@ export const dynamic = "force-static";
 
 export default function OpenGraphImage() {
   return new ImageResponse(
-    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", width: "100%", height: "100%", background: "#171c19", color: "#e9ede5", padding: "90px", fontFamily: "sans-serif" }}>
-      <div style={{ color: "#b1cb91", fontSize: 24, marginBottom: 35 }}>{profile.location}</div>
-      <div style={{ display: "flex", fontSize: 100, letterSpacing: -5 }}>{profile.name}<span style={{ color: "#b1cb91" }}>.</span></div>
-      <div style={{ fontSize: 32, marginTop: 30 }}>{profile.headline}</div>
+    <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%", background: "#191816", color: "#f2eee6", padding: "58px 70px", fontFamily: "sans-serif" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 23, color: "#e4a181", borderBottom: "1px solid #4b443b", paddingBottom: 24 }}><span>{profile.name}</span><span>{profile.location}</span></div>
+      <div style={{ fontSize: 64, lineHeight: 1.12, letterSpacing: -2, marginTop: 48 }}>{profile.headlineLead}</div>
+      <div style={{ fontSize: 55, lineHeight: 1.12, color: "#e4a181", marginTop: 5 }}>{profile.headlineRest}</div>
+      <div style={{ display: "flex", gap: 50, borderTop: "1px solid #4b443b", paddingTop: 25, marginTop: 45 }}>{profile.proof.map(item => <div key={item.label} style={{ display: "flex", flexDirection: "column", gap: 9 }}><span style={{ fontSize: 39 }}>{item.value}</span><span style={{ fontSize: 18, color: "#c0b6aa" }}>{item.label}</span></div>)}</div>
     </div>, size,
   );
 }
