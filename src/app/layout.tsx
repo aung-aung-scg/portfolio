@@ -3,7 +3,8 @@ import { profile } from "@/data/profile";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || profile.metadata.url),
+  metadataBase: new URL(profile.metadata.url),
+  alternates: { canonical: "/" },
   title: profile.metadata.title,
   description: profile.metadata.description,
   openGraph: { title: profile.metadata.title, description: profile.metadata.description, type: "profile", locale: "en_US", siteName: profile.name, url: "/" },

@@ -20,7 +20,6 @@ export const profile = {
   social: [
     { label: "GitHub", href: "https://github.com/aung-aung-scg" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/aung-aung-ror-developer" },
-    { label: "Facebook", href: "https://www.facebook.com/deinebrian/" },
   ],
   metadata: {
     title: "Aung Aung — Senior Ruby on Rails / Full-Stack Developer",
@@ -41,6 +40,21 @@ export const profile = {
     built: "What I built",
     result: "The result",
     liveLink: "Visit live site",
+    interesting: "What’s interesting",
+    carousel: "Project case studies",
+    carouselSlides: "Case study slides",
+    carouselHelp: "Use the left and right arrow keys to change projects. You can also swipe or use the previous and next buttons.",
+    previousProject: "Previous project",
+    previousShort: "Previous",
+    nextShort: "Next",
+    nextProject: "Next project",
+    showMore: "Show more",
+    showLess: "Show less",
+    expandAll: "Expand all",
+    collapseAll: "Collapse all",
+    copyEmail: "Copy email address",
+    copiedEmail: "Email address copied",
+    copyFailed: "Copy failed. Select the email address to copy it manually.",
     tools: "Tools I use",
     experience: "Experience",
     experienceHeading: "Where I’ve worked",
@@ -61,6 +75,7 @@ export const profile = {
   projects: [
     {
       id: "manabeat",
+      interesting: "I designed IP-based exam access control.",
       title: "Manabeat LMS",
       category: "Ruby on Rails · E-learning",
       employer: "Softguide Software House",
@@ -71,6 +86,7 @@ export const profile = {
       built: [
         "I upgraded the application from Rails 4 to Rails 7. I added MiniTest coverage for every model, concern and controller.",
         "I profiled bottlenecks with New Relic and optimised MySQL schemas and queries. I built IP-based access control for exams and added React-based exam-material creation.",
+        "I used Sidekiq for scheduled notifications and batches of about 1,000 emails per request.",
       ],
       result: "I cut load time for 1M-row datasets from about 2 minutes to 30 seconds. I maintained a production LMS serving 1M+ users across about 100 paid sites.",
       stack: ["Ruby on Rails", "MySQL", "MiniTest", "Sidekiq", "Redis", "AWS"],
@@ -83,6 +99,7 @@ export const profile = {
     },
     {
       id: "deltadrop",
+      interesting: "I built copy trading with encrypted API keys and connected live Binance prices.",
       title: "DeltaDrop",
       category: "Full-stack · Social investing",
       employer: "Astranokta",
@@ -123,6 +140,7 @@ export const profile = {
   experience: [
     {
       company: "Astranokta",
+      summary: "I led DeltaDrop engineering across web and Android. I mentored 2 junior developers.",
       role: "Lead Full-Stack Engineer",
       period: "May 2026 – Aug 2026",
       context: "Remote contract · Completed",
@@ -131,6 +149,7 @@ export const profile = {
     },
     {
       company: "Softguide Software House",
+      summary: "I led 5–8 developers on Manabeat and upgraded Rails 4 to Rails 7. I cut MySQL load time from about 2 minutes to 30 seconds.",
       role: "Lead Developer, Myanmar Team",
       period: "Jan 2018 – Apr 2026",
       context: "Senior Ruby on Rails / DevOps Engineer · Team lead from 2020",
@@ -139,6 +158,7 @@ export const profile = {
     },
     {
       company: "X.inc",
+      summary: "I was the sole engineer on AICMS. I built its Rails API and integrated OpenAI/ChatGPT.",
       role: "Senior Full-Stack Engineer",
       period: "Apr 2023 – Apr 2024",
       context: "Remote, part-time · Concurrent with Softguide",
@@ -147,6 +167,7 @@ export const profile = {
     },
     {
       company: "Frobom Myanmar Inc",
+      summary: "I built a Java Spring attendance system and a job-search interface.",
       role: "Junior Java Developer",
       period: "Jan 2017 – Dec 2017",
       context: "",

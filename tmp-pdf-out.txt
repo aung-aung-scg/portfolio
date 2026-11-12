@@ -1,0 +1,502 @@
+start
+idx stream 2168
+idx stream-n 2168
+idx stream-r -1
+slice "ateDecode ] /Length 3370\n>>\nstream\nGauHM;0Ua(&q801R&<+>Xs(4S\"3o#cC\"fFC8[Eu>^%WLQ"
+hit start 2168 end 5545
+
+======== STREAM 1 bytes 3370 ========
+HEADER unt 2 /Kids [ 9 0 R 10 0 R ] /Type /Pages >> endobj 14 0 obj << /Filter [ /ASCII85Decode /FlateDecode ] /Length 3370 >> 
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 51.35433 775.0394 cm
+q
+.121569 .227451 .372549 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL (Aung Aung) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 761.0394 cm
+q
+BT 1 0 0 1 0 3 Tm 14 TL /F2 11 Tf 0 0 0 rg (Senior Ruby on Rails Developer & Team Lead) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 749.0394 cm
+q
+BT 1 0 0 1 0 3 Tm 12 TL /F1 9 Tf .2 .2 .2 rg (Ruby on Rails \177 PostgreSQL / MySQL \177 JavaScript \177 AWS \177 Team Leadership) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 737.0394 cm
+q
+BT 1 0 0 1 0 3 Tm 12 TL /F1 9 Tf .2 .2 .2 rg (Bangkok, Thailand \177 Open to relocation \177 Available immediately \177 +66 62 846 1090) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 725.0394 cm
+q
+BT 1 0 0 1 0 3 Tm 12 TL /F1 9 Tf .121569 .227451 .372549 rg (aung.aung.ycc@gmail.com) Tj .2 .2 .2 rg ( \177 ) Tj .121569 .227451 .372549 rg (GitHub) Tj .2 .2 .2 rg ( \177 ) Tj .121569 .227451 .372549 rg (LinkedIn) Tj .2 .2 .2 rg ( \177 ) Tj .121569 .227451 .372549 rg (Portfolio) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 704.0394 cm
+q
+.121569 .227451 .372549 rg
+BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (PROFESSIONAL SUMMARY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 701.4394 cm
+q
+.6 w
+1 J
+.121569 .227451 .372549 RG
+n 0 0 m 492.5669 0 l S
+Q
+Q
+q
+1 0 0 1 51.35433 674.8394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 674.8394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL -0.052942 Tw (Senior Ruby on Rails developer with 8+ years of Rails experience \(Ruby Association Certified Ruby Programmer\), plus) Tj T* 0 Tw (full-stack work in TypeScript/Node.js and React. 9+ years in software overall.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 651.2394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 651.2394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Built and maintained server-side rendered Rails applications at scale: an LMS with about 100 paid sites and over 1) Tj T* (million users, upgraded from Rails 4 to Rails 7 with full MiniTest coverage of models, concerns and controllers.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 627.6394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 627.6394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Performance-minded: profiled with New Relic and optimised MySQL schemas and queries, cutting 1M-row load time) Tj T* (from about 2 minutes to 30 seconds. Experienced with Sidekiq, Redis, Docker and AWS.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 604.0394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 604.0394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL -0.009242 Tw (Led and mentored teams of 5-8 developers: wrote estimates, delegated tasks, ran code reviews and reported progress) Tj T* 0 Tw (directly to product owners and shareholders in English.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 583.0394 cm
+q
+.121569 .227451 .372549 rg
+BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (TECHNICAL SKILLS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 580.4394 cm
+q
+.6 w
+1 J
+.121569 .227451 .372549 RG
+n 0 0 m 492.5669 0 l S
+Q
+Q
+q
+1 0 0 1 51.35433 553.4394 cm
+q
+BT 1 0 0 1 0 14.8 Tm -0.019004 Tw 12 TL /F2 9.2 Tf 0 0 0 rg (Ruby & Rails:) Tj /F1 9.2 Tf ( Ruby, Ruby on Rails \(4 to 7, upgrade lead\), ActiveRecord, concerns, Devise, CanCanCan, Sidekiq, REST) Tj T* 0 Tw (APIs, server-side rendered apps, RSpec, MiniTest) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 541.4394 cm
+q
+BT 1 0 0 1 0 2.8 Tm 12 TL /F2 9.2 Tf 0 0 0 rg (Databases:) Tj /F1 9.2 Tf ( PostgreSQL, MySQL, Redis, Supabase; schema design, migrations, query optimisation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 529.4394 cm
+q
+BT 1 0 0 1 0 2.8 Tm 12 TL /F2 9.2 Tf 0 0 0 rg (Frontend:) Tj /F1 9.2 Tf ( JavaScript, TypeScript, HTML5, CSS3/SCSS, responsive design, React, Next.js, Tailwind CSS, Bootstrap) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 517.4394 cm
+q
+BT 1 0 0 1 0 2.8 Tm 12 TL /F2 9.2 Tf 0 0 0 rg (Other backend:) Tj /F1 9.2 Tf ( Node.js, Express, TypeScript, Java \(Spring\), PHP \(certified\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 493.4394 cm
+q
+BT 1 0 0 1 0 14.8 Tm 12 TL /F2 9.2 Tf 0 0 0 rg (Cloud & delivery:) Tj /F1 9.2 Tf ( AWS, Docker, Heroku, Ansible, Linux/Unix, CircleCI, New Relic, feature-flag releases,) Tj T* (testing-site-to-production workflows) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 469.4394 cm
+q
+BT 1 0 0 1 0 14.8 Tm -0.066605 Tw 12 TL /F2 9.2 Tf 0 0 0 rg (Practice:) Tj /F1 9.2 Tf ( Git/GitHub \(pull requests, code review\), Postman, Agile, Backlog, estimation, technical documentation, unit and) Tj T* 0 Tw (regression testing \(also Jest, node:test\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 457.4394 cm
+q
+BT 1 0 0 1 0 2.8 Tm 12 TL /F2 9.2 Tf 0 0 0 rg (Integrations:) Tj /F1 9.2 Tf ( Stripe, OpenAI/ChatGPT API, Slack API, Binance price data, Unsplash API) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 436.4394 cm
+q
+.121569 .227451 .372549 rg
+BT 1 0 0 1 0 2.5 Tm /F2 10.5 Tf 13 TL (PROFESSIONAL EXPERIENCE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 433.8394 cm
+q
+.6 w
+1 J
+.121569 .227451 .372549 RG
+n 0 0 m 492.5669 0 l S
+Q
+Q
+q
+1 0 0 1 51.35433 416.3394 cm
+q
+BT 1 0 0 1 0 2.7 Tm 12.5 TL /F2 9.8 Tf 0 0 0 rg (Lead Developer \(Myanmar Team\) \227 Softguide Software House) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 405.3394 cm
+q
+BT 1 0 0 1 0 2.2 Tm 11 TL /F3 8.8 Tf .266667 .266667 .266667 rg (Jan 2018 \226 Apr 2026 \177 Senior Ruby on Rails / DevOps Engineer; Lead Developer for the Myanmar team from 2020) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 380.2394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 380.2394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Led the Myanmar side of Manabeat, a Rails LMS with about 100 paid sites and over 1 million users, working remotely) Tj T* (with a Japanese engineering team.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 368.4394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 3.8 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 368.4394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.6 Tm /F1 9.2 Tf 11.8 TL (Upgraded Manabeat from Rails 4 to Rails 7 and added MiniTest coverage for every model, concern and controller.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 344.8394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 344.8394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Optimised MySQL schemas, migrations and queries, cutting load time for 1M-row datasets from about 2 minutes to 30) Tj T* (seconds; profiled with New Relic to find bottlenecks.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 321.2394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 321.2394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Used Sidekiq for scheduled notifications and email batches of about 1,000 mails per request; enforced per-site) Tj T* (media-upload limits with Redis and built a reporting dashboard.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 297.6394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 297.6394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Designed IP-based access control to protect exam integrity; built React-based exam-material creation inside the Rails) Tj T* (app.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 285.8394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 3.8 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 285.8394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.6 Tm /F1 9.2 Tf 11.8 TL (Built a Rails attendance system with payments and certificates \(on Heroku\) and a small Rails point-of-sale system.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 262.2394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 262.2394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Supported AWS deployments and releases with Docker, Ansible and CircleCI; implemented internationalisation in) Tj T* (English, Japanese, Simplified and Traditional Chinese.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 238.6394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 238.6394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Led and mentored 5-8 developers, wrote estimates, assigned work, documented every change with screenshots, and) Tj T* (worked from specifications on GitHub and Backlog.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 221.1394 cm
+q
+BT 1 0 0 1 0 2.7 Tm 12.5 TL /F2 9.8 Tf 0 0 0 rg (Lead Full-Stack Engineer \227 Astranokta) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 210.1394 cm
+q
+BT 1 0 0 1 0 2.2 Tm 11 TL /F3 8.8 Tf .266667 .266667 .266667 rg (Contract, remote \177 May 2026 \226 Aug 2026 \(contract completed\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 185.0394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 185.0394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Led engineering for a social-investing platform: Next.js web app, React Native/Expo Android app and a Node.js) Tj T* (backend on Supabase PostgreSQL.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 173.2394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 3.8 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 173.2394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.6 Tm /F1 9.2 Tf 11.8 TL (Delivered Stripe payments, copy trading, signal management and live Binance prices.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 149.6394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 149.6394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Owned the CircleCI pipeline, wrote automated tests \(node:test, Jest + ts-jest\), reviewed all pull requests and mentored) Tj T* (2 junior developers.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 126.0394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 126.0394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Released through a testing site and production feature flags; communicated directly with shareholders on scope,) Tj T* (progress and delivery.) Tj T* ET
+Q
+Q
+ 
+
+hit start 5630 end 6944
+
+======== STREAM 2 bytes 1307 ========
+HEADER @S25D<Ik\KD>fjH"fOTFa.U;srrF:B':f~>endstream endobj 15 0 obj << /Filter [ /ASCII85Decode /FlateDecode ] /Length 1307 >> 
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 51.35433 786.5394 cm
+q
+BT 1 0 0 1 0 2.7 Tm 12.5 TL /F2 9.8 Tf 0 0 0 rg (Senior Full-Stack Engineer \227 X.inc) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 775.5394 cm
+q
+BT 1 0 0 1 0 2.2 Tm 11 TL /F3 8.8 Tf .266667 .266667 .266667 rg (Remote, part-time, concurrent with Softguide \177 Apr 2023 \226 Apr 2024) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 750.4394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 750.4394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Sole engineer on AICMS: designed the PostgreSQL schema and built the Rails API with TypeScript/Express services) Tj T* (behind a Next.js frontend, integrated with the OpenAI/ChatGPT API, with role management.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 726.8394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 726.8394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Built a rental-room search and moving platform \(React.js frontend, Rails API\) that scraped external listings and) Tj T* (matched images via the Unsplash API.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 703.2394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 703.2394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Integrated ChatGPT and Slack REST APIs, wrote RSpec automated and regression tests, and deployed with Docker) Tj T* (on AWS.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 685.7394 cm
+q
+BT 1 0 0 1 0 2.7 Tm 12.5 TL /F2 9.8 Tf 0 0 0 rg (Junior Java Developer \227 Frobom Myanmar Inc) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 674.7394 cm
+q
+BT 1 0 0 1 0 2.2 Tm 11 TL /F3 8.8 Tf .266667 .266667 .266667 rg (Jan 2017 \226 Dec 2017) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 649.6394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 15.6 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 649.6394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14.4 Tm /F1 9.2 Tf 11.8 TL (Built a company-internal attendance system with Java Spring and the user interface for a job-search platform with) Tj T* (Bootstrap, HTML and CSS.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 628.6394 cm
+q
+BT 1 0 0 1 0 2.5 Tm 13 TL /F2 10.5 Tf .121569 .227451 .372549 rg (EDUCATION & CERTIFICATIONS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 626.0394 cm
+q
+.6 w
+1 J
+.121569 .227451 .372549 RG
+n 0 0 m 492.5669 0 l S
+Q
+Q
+q
+1 0 0 1 51.35433 611.2394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 3.8 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 611.2394 cm
+q
+BT 1 0 0 1 0 2.6 Tm 11.8 TL /F1 9.2 Tf 0 0 0 rg (Bachelor of Computer Science \(B.E., IST\) \227 University of Technology \(Yadanarpon Cyber City\), 2016) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 599.4394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 3.8 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 599.4394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.6 Tm /F1 9.2 Tf 11.8 TL (Ruby Association Certified Ruby Programmer; Java EE \(Spring MVC\) and PHP certifications) Tj T* ET
+Q
+Q
+q
+1 0 0 1 51.35433 587.6394 cm
+BT /F1 8 Tf 9.6 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 3.8 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 61.35433 587.6394 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.6 Tm /F1 9.2 Tf 11.8 TL (Japanese: NAT-TEST N3 \(April 2026\)) Tj T* ET
+Q
+Q
+ 
+
+streams found 2 pdf bytes 7496
