@@ -1,6 +1,6 @@
 "use client";
 
-import { Children, useEffect, useRef, useState, useSyncExternalStore, type KeyboardEvent, type ReactNode } from "react";
+import { Children, useEffect, useRef, useState, useSyncExternalStore, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
 
 function subscribe(onChange: () => void) {
   window.addEventListener("portfolio-theme", onChange);
@@ -37,6 +37,12 @@ export function ScrollEffects() {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
           const section = entry.target as HTMLElement;
+          if (section.classList.contains("proof")) {
+            section.classList.add("metric-enter");
+            animated.add(section);
+            observer?.unobserve(section);
+            return;
+          }
           Array.from(section.children).forEach((child, index) => {
             // Never fade the carousel container: its entire case study must remain visible.
             if (child instanceof HTMLElement && !child.classList.contains("showcase")) reveal(child, index * 60);
@@ -45,15 +51,16 @@ export function ScrollEffects() {
             label.classList.add("label-enter");
             animated.add(label);
           });
-          if (section.id === "skills") section.querySelectorAll<HTMLElement>(".tags li").forEach((tag, index) => {
-            tag.style.setProperty("--reveal-delay", `${index * 20}ms`);
-            tag.classList.add("tag-enter");
-            animated.add(tag);
+          if (section.id === "skills") section.querySelectorAll<HTMLElement>(".skill-years-row").forEach((row, index) => {
+            row.style.setProperty("--reveal-delay", `${index * 60}ms`);
+            row.classList.add("fill-enter");
+            animated.add(row);
           });
           observer?.unobserve(section);
         });
       }, { threshold: 0, rootMargin: "0px 0px -24px 0px" }) : null;
       document.querySelectorAll<HTMLElement>("main > .section").forEach(section => observer?.observe(section));
+      document.querySelectorAll<HTMLElement>(".proof").forEach(proof => observer?.observe(proof));
 
       let pending: number | null = null;
       const update = () => {
@@ -77,7 +84,7 @@ export function ScrollEffects() {
         window.removeEventListener("scroll", schedule);
         window.removeEventListener("resize", schedule);
         document.documentElement.style.removeProperty("--scroll-progress");
-        animated.forEach(node => { node.classList.remove("scroll-enter", "tag-enter", "label-enter"); node.style.removeProperty("--reveal-delay"); });
+        animated.forEach(node => { node.classList.remove("scroll-enter", "tag-enter", "label-enter", "metric-enter", "fill-enter"); node.style.removeProperty("--reveal-delay"); });
       };
     };
     setup();
@@ -142,9 +149,31 @@ export function ProjectShowcase({ children, titles, labels }: { children: ReactN
   const trackRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef(0);
   const animation = useRef<number | null>(null);
+  const gesture = useRef<{ id: number; x: number; y: number; start: number; direction: number; moved: boolean } | null>(null);
+  const blockClick = useRef(false);
   const [current, setCurrent] = useState(0);
   const [height, setHeight] = useState<number>();
   const hydrated = useSyncExternalStore(subscribeToNothing, clientReady, serverReady);
+
+  function commit(index: number) {
+    activeRef.current = index;
+    setCurrent(previous => previous === index ? previous : index);
+  }
+
+  // Rotate the existing nodes instead of cloning case studies (and their IDs).
+  // The reset stays on the same visible slide; the next slide is always adjacent.
+  function arrange(direction: number) {
+    const track = trackRef.current!;
+    const count = titles.length;
+    const base = direction > 0 ? activeRef.current : (activeRef.current + 1) % count;
+    const slides = Array.from(track.children) as HTMLElement[];
+    const changed = slides.some((slide, index) => slide.style.order !== String((index - base + count) % count));
+    track.dataset.sliding = "true";
+    if (changed) {
+      slides.forEach((slide, index) => { slide.style.order = String((index - base + count) % count); });
+      track.scrollLeft = slides[activeRef.current].offsetLeft;
+    }
+  }
 
   function cancelAnimation() {
     if (animation.current !== null) cancelAnimationFrame(animation.current);
@@ -155,14 +184,18 @@ export function ProjectShowcase({ children, titles, labels }: { children: ReactN
   function goTo(index: number) {
     const track = trackRef.current;
     if (!track) return;
-    cancelAnimation();
-    const next = Math.max(0, Math.min(index, titles.length - 1));
+    if (animation.current !== null) cancelAnimationFrame(animation.current);
+    animation.current = null;
+    // Keep snapping suspended between a drag and its settling animation.
+    track.dataset.sliding = "true";
+    const next = ((index % titles.length) + titles.length) % titles.length;
+    if (next !== activeRef.current) arrange(index > activeRef.current ? 1 : -1);
     const target = (track.children[next] as HTMLElement).offsetLeft;
     if (document.activeElement !== track && track.contains(document.activeElement)) track.focus({ preventScroll: true });
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       track.scrollLeft = target;
-      activeRef.current = next;
-      setCurrent(next);
+      delete track.dataset.sliding;
+      commit(next);
       return;
     }
     const start = track.scrollLeft;
@@ -170,14 +203,13 @@ export function ProjectShowcase({ children, titles, labels }: { children: ReactN
     track.dataset.sliding = "true";
     const tick = (now: number) => {
       const progress = Math.min((now - started) / 350, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
+      const eased = progress < .5 ? 4 * progress ** 3 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
       track.scrollLeft = start + (target - start) * eased;
       if (progress < 1) animation.current = requestAnimationFrame(tick);
       else {
         animation.current = null;
         delete track.dataset.sliding;
-        activeRef.current = next;
-        setCurrent(next);
+        commit(next);
       }
     };
     animation.current = requestAnimationFrame(tick);
@@ -185,11 +217,52 @@ export function ProjectShowcase({ children, titles, labels }: { children: ReactN
 
   function syncPosition() {
     const track = trackRef.current;
-    if (!track) return;
+    if (!track || animation.current !== null || gesture.current?.moved) return;
     const slides = Array.from(track.children) as HTMLElement[];
     const nearest = slides.reduce((best, slide, index) => Math.abs(slide.offsetLeft - track.scrollLeft) < Math.abs(slides[best].offsetLeft - track.scrollLeft) ? index : best, 0);
-    activeRef.current = nearest;
-    setCurrent(nearest);
+    commit(nearest);
+  }
+
+  function startDrag(event: PointerEvent<HTMLDivElement>) {
+    if (!event.isPrimary || event.button !== 0 || titles.length < 2) return;
+    blockClick.current = false;
+    if (event.target instanceof Element && event.target.closest("a,button,summary,input,textarea,select,[contenteditable=true]")) return;
+    cancelAnimation();
+    syncPosition();
+    gesture.current = { id: event.pointerId, x: event.clientX, y: event.clientY, start: event.currentTarget.scrollLeft, direction: 0, moved: false };
+    event.currentTarget.setPointerCapture(event.pointerId);
+    if (event.pointerType === "mouse") event.preventDefault();
+  }
+
+  function drag(event: PointerEvent<HTMLDivElement>) {
+    const state = gesture.current;
+    if (!state || state.id !== event.pointerId) return;
+    const distance = state.x - event.clientX;
+    if (!state.moved) {
+      if (Math.abs(distance) < 6 || Math.abs(distance) <= Math.abs(event.clientY - state.y)) return;
+      state.direction = distance > 0 ? 1 : -1;
+      arrange(state.direction);
+      state.start = event.currentTarget.scrollLeft;
+      state.moved = true;
+      event.currentTarget.dataset.dragging = "true";
+      event.currentTarget.focus({ preventScroll: true });
+    }
+    const limit = event.currentTarget.clientWidth;
+    const movement = state.direction > 0 ? Math.max(0, Math.min(limit, distance)) : Math.min(0, Math.max(-limit, distance));
+    event.currentTarget.scrollLeft = state.start + movement;
+    event.preventDefault();
+  }
+
+  function endDrag(event: PointerEvent<HTMLDivElement>) {
+    const state = gesture.current;
+    if (!state || state.id !== event.pointerId) return;
+    gesture.current = null;
+    delete event.currentTarget.dataset.dragging;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    if (!state.moved) return;
+    blockClick.current = true;
+    const enough = Math.abs(event.currentTarget.scrollLeft - state.start) >= Math.min(60, event.currentTarget.clientWidth * .15);
+    goTo(activeRef.current + (event.type !== "pointercancel" && enough ? state.direction : 0));
   }
 
   function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
@@ -200,16 +273,16 @@ export function ProjectShowcase({ children, titles, labels }: { children: ReactN
 
   useEffect(() => {
     const track = trackRef.current;
-    const content = track?.children[current]?.firstElementChild;
-    if (!track || !content || !("ResizeObserver" in window)) return;
+    if (!track || !("ResizeObserver" in window)) return;
+    const contents = Array.from(track.children).map(slide => slide.firstElementChild).filter((node): node is HTMLElement => node instanceof HTMLElement);
     const measure = () => {
-      // Use layout dimensions, independent of ancestor reveal transforms.
-      const measured = Math.max((content as HTMLElement).offsetHeight, content.scrollHeight);
+      // Reserve the tallest case study so navigating never shifts the page.
+      const measured = Math.max(0, ...contents.map(content => Math.max(content.offsetHeight, content.scrollHeight)));
       if (measured > 0) setHeight(measured + 20);
     };
     measure();
     const observer = new ResizeObserver(measure);
-    observer.observe(content);
+    contents.forEach(content => observer.observe(content));
     const resize = () => {
       if (animation.current !== null) cancelAnimationFrame(animation.current);
       animation.current = null;
@@ -218,27 +291,18 @@ export function ProjectShowcase({ children, titles, labels }: { children: ReactN
     };
     window.addEventListener("resize", resize);
     return () => { observer.disconnect(); window.removeEventListener("resize", resize); };
-  }, [current]);
-
-  useEffect(() => {
-    const slide = trackRef.current?.children[current] as HTMLElement | undefined;
-    if (!slide || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const fade = slide.animate([{ opacity: .65 }, { opacity: 1 }], { duration: 350, easing: "ease-out" });
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const stop = () => { if (preference.matches) fade.cancel(); };
-    preference.addEventListener("change", stop);
-    return () => { fade.cancel(); preference.removeEventListener("change", stop); };
-  }, [current]);
+  }, []);
 
   useEffect(() => () => { if (animation.current !== null) cancelAnimationFrame(animation.current); }, []);
 
   return <div className="showcase" role="region" aria-roledescription="carousel" aria-label={labels.region} onKeyDown={onKeyDown}>
     <div className="showcase-controls"><p className="slide-counter" role="status" aria-live="polite" aria-atomic="true">{current + 1}<span> / </span>{titles.length}<span className="sr-only"> — {titles[current]}</span></p><div className="slide-buttons">
-      <button type="button" onClick={() => goTo(current - 1)} disabled={current === 0} aria-label={labels.previous} aria-controls="project-slides"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg><span>{labels.previousShort}</span></button>
-      <button type="button" onClick={() => goTo(current + 1)} disabled={current === titles.length - 1} aria-label={labels.next} aria-controls="project-slides"><span>{labels.nextShort}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></button>
+      <button type="button" onClick={() => goTo(activeRef.current - 1)} disabled={titles.length < 2} aria-label={labels.previous} aria-controls="project-slides"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg><span>{labels.previousShort}</span></button>
+      <button type="button" onClick={() => goTo(activeRef.current + 1)} disabled={titles.length < 2} aria-label={labels.next} aria-controls="project-slides"><span>{labels.nextShort}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg></button>
     </div></div>
+    <div className="slide-dots" role="group" aria-label={labels.slides}>{titles.map((title, index) => <button key={title} type="button" aria-label={`${index + 1} / ${titles.length}: ${title}`} aria-current={index === current ? "true" : undefined} aria-controls="project-slides" onClick={() => goTo(index)}><span aria-hidden="true" /></button>)}</div>
     <p id="showcase-help" className="sr-only">{labels.help}</p>
-    <div ref={trackRef} id="project-slides" className="showcase-track" role="group" aria-label={labels.slides} aria-describedby="showcase-help" tabIndex={0} onScroll={syncPosition} onPointerDown={cancelAnimation} onWheel={cancelAnimation} style={height ? { height } : undefined}>
+    <div ref={trackRef} id="project-slides" className="showcase-track" role="group" aria-label={labels.slides} aria-describedby="showcase-help" tabIndex={0} onScroll={syncPosition} onPointerDown={startDrag} onPointerMove={drag} onPointerUp={endDrag} onPointerCancel={endDrag} onLostPointerCapture={endDrag} onDragStart={event => event.preventDefault()} onClickCapture={event => { if (blockClick.current) { event.preventDefault(); event.stopPropagation(); blockClick.current = false; } }} onWheel={cancelAnimation} style={height ? { height } : undefined}>
       {Children.map(children, (child, index) => <div className="showcase-slide" role="group" aria-roledescription="slide" aria-label={`${index + 1} / ${titles.length}: ${titles[index]}`} aria-hidden={hydrated && index !== current ? true : undefined} inert={hydrated && index !== current ? true : undefined}>{child}</div>)}
     </div>
   </div>;
