@@ -4,5 +4,5 @@ import DocumentLayout, { pageMetadata } from "@/components/document-layout";
 export const metadata = pageMetadata(ja);
 
 export default function JapaneseLayout({ children }: { children: React.ReactNode }) {
-  return <DocumentLayout locale="ja">{children}</DocumentLayout>;
+  return <DocumentLayout locale="ja" includePerson>{children}</DocumentLayout>;
 }

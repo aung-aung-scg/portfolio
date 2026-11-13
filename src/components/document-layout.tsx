@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { Profile } from "@/data/profile";
+import { en, type Profile } from "@/data/profile";
 import "@/app/globals.css";
 
 export function pageMetadata(p: Profile): Metadata {
@@ -17,12 +17,18 @@ export function pageMetadata(p: Profile): Metadata {
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: p.metadata.title }],
     },
     twitter: { card: "summary_large_image", title: p.metadata.title, description: p.metadata.description, images: ["/opengraph-image"] },
-    icons: { icon: "/icon.svg" },
+    icons: { icon: { url: "/favicon.svg", type: "image/svg+xml" }, shortcut: "/favicon.svg" },
   };
 }
 
 const themeScript = `try{document.documentElement.dataset.theme=localStorage.getItem('portfolio-theme')==='light'?'light':'dark'}catch{document.documentElement.dataset.theme='dark'}`;
 
-export default function DocumentLayout({ children, locale }: { children: React.ReactNode; locale: Profile["locale"] }) {
-  return <html lang={locale} data-theme="dark" suppressHydrationWarning><head>{locale === "en" && <><link rel="preload" href="/fonts/instrument-sans-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/newsreader-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></>}<script dangerouslySetInnerHTML={{ __html: themeScript }} /></head><body>{children}</body></html>;
+export default function DocumentLayout({ children, locale, includePerson = false }: { children: React.ReactNode; locale: Profile["locale"]; includePerson?: boolean }) {
+  const person = {
+    "@context": "https://schema.org", "@type": "Person",
+    name: en.name, jobTitle: en.headline, url: new URL("/", en.metadata.url).href,
+    sameAs: en.social.map(link => link.href),
+    address: { "@type": "PostalAddress", addressLocality: en.addressLocality },
+  };
+  return <html lang={locale} data-theme="dark" suppressHydrationWarning><head>{locale === "en" && <><link rel="preload" href="/fonts/instrument-sans-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /><link rel="preload" href="/fonts/newsreader-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /></>}<script dangerouslySetInnerHTML={{ __html: themeScript }} />{includePerson && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }} />}</head><body>{children}</body></html>;
 }
