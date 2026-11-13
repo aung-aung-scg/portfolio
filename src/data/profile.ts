@@ -6,7 +6,7 @@ export const en = {
   profileImageAlt: "Aung Aung",
   languageLinks: [
     { locale: "en", href: "/", label: "EN", accessible: "English" },
-    { locale: "ja", href: "/ja", label: "JA", accessible: "日本語" },
+    { locale: "ja", href: "/ja/", label: "JA", accessible: "日本語" },
   ],
   name: "Aung Aung",
   nickname: "Zap",

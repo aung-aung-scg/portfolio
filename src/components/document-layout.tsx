@@ -3,12 +3,12 @@ import type { Profile } from "@/data/profile";
 import "@/app/globals.css";
 
 export function pageMetadata(p: Profile): Metadata {
-  const path = p.locale === "ja" ? "/ja" : "/";
+  const path = p.locale === "ja" ? "/ja/" : "/";
   return {
     metadataBase: new URL(p.metadata.url),
     title: p.metadata.title,
     description: p.metadata.description,
-    alternates: { canonical: path, languages: { en: "/", ja: "/ja", "x-default": "/" } },
+    alternates: { canonical: path, languages: { en: "/", ja: "/ja/", "x-default": "/" } },
     openGraph: {
       title: p.metadata.title, description: p.metadata.description, type: "profile",
       locale: p.locale === "ja" ? "ja_JP" : "en_US",
