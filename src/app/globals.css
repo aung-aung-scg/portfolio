@@ -117,7 +117,7 @@ h1 .headline-rest { color: var(--muted); font-size: .86em; line-height: 1.12; ma
 .showcase-track img { -webkit-user-drag: none; }
 .slide-dots { display: flex; justify-content: center; gap: 2px; margin: -12px 0 10px; }
 .slide-dots button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; background: transparent; border: 0; }
-.slide-dots button span { width: 26px; height: 3px; background: var(--line); border-radius: 1px; transform: scaleX(.75); transition: background-color 400ms ease-in-out, transform 400ms ease-in-out; }
+.slide-dots button span { width: 26px; height: 3px; background: var(--muted); border-radius: 1px; transform: scaleX(.75); transition: background-color 400ms ease-in-out, transform 400ms ease-in-out; }
 .slide-dots button[aria-current="true"] span { background: var(--accent); border-color: var(--accent); transform: scaleX(1); }
 .showcase-slide { flex: 0 0 100%; width: 100%; min-width: 0; padding: 8px 6px 12px; scroll-snap-align: start; scroll-snap-stop: always; }
 .showcase-slide, .showcase-slide .case-study, .showcase-slide .slide-layout { opacity: 1; visibility: visible; animation: none; }
@@ -426,6 +426,8 @@ html:lang(ja) .hero-intro > p, html:lang(ja) .proof-note { line-height: 1.8; }
 }
 @media (max-width: 580px) {
   html:lang(ja) .identity { gap: 0; }
+  html:lang(ja) #hero-title { font-size: clamp(28px, 7.8vw, 34px); }
+  html:lang(ja) #hero-title .headline-rest { font-size: .82em; white-space: nowrap; }
   html:lang(ja) .header-actions { gap: 6px; }
   html:lang(ja) .main-navigation { gap: 6px; }
   html:lang(ja) .proof-1 .proof-value { font-size: 24px; }
